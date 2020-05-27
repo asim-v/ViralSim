@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #1a1a1a;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+canvas {
+  background: #ddd;
+}
+
+.roundish{
+  padding: 7px 10px ;
+  border-radius: 10px;
+  color: white;
+}
+
+#gui > .close-button {
+  background: #e6bf00;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: none;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+#colorLegend {
+  position: absolute;
+  bottom: 10;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+#colorLegend > li {
+  padding: 3px 20px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #555;
+  width: 125px;
+}
+
+#colorLegend > li > span {
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#chartContainer {
+  position: absolute;
+  left: 15px;
+  top: 2px;
+  height: 250px;
+  width: 350px;
+}
+
+#chart {
+  background: rgba(47,161,214,0.2);
+  border: solid rgb(47,161,214);
+  border-radius: 20px;
+}
+
+#capacity {
+  border-bottom: dotted rgba(0,0,0,0.2) 5px;
+  position: relative;
+  color:white;
+  top: 65px;
+  left: 2px;
+  text-align: left;
+  z-index: 100;
+}
+
+@media only screen and (max-width: 600px) {
+  #gui { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
+  #chartContainer {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
+  #chartContainer > canvas {
+    position: relative;
+    top: -2px;
+  }
+  
+}
