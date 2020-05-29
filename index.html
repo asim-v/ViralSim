@@ -6,7 +6,7 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto&amp;display=swap'><link rel="stylesheet" href="./style.css">
 
 </head>
-<body>
+<body >
 <!-- partial:index.partial.html -->
 <ul id="colorLegend">
   <li><div class = "roundish" style="background-color: #04d492">Saludables</div></li>
@@ -20,11 +20,39 @@
   <canvas id="chart"></canvas>
 </div>
 
+<style type="text/css">
+.menu-container{
+  position: absolute; 
+  left: 50%;
+  top: 50%;
+}
+.blur_effect { 
+    filter: blur(5px); 
+} 
+.menu{
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+  position: relative; left: -50%; 
+  background-color: #1B1B1B;
+  border: 5px #262626;
+  border-style: solid
+}
+.menu h1{
+  color: white;
+}
+</style>
 
 
+<div class="menu-container">
+  <div class="menu">
+    <h1>Simulavirus</h1> 
+    tum te tum
+  </div>
+</div>
 
 <!-- partial -->
-  <script  src="dat.gui.js"></script>
+<script  src="dat.gui.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script><script  src="./script.js"></script>
 
 </body>
