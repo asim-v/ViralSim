@@ -2,13 +2,13 @@ var CONFIG = {
   COLORS: {
     healthy: "#00ffae",
     infected: "#ff0048",
-    recovered: "#38747B",
+    recovered: "#e6bf00",
     dead: "#9e9e9e"
   },
   INFECTIOUSNESS:30,
   SCREEN_WIDTH: 0,
   SCREEN_HEIGHT: 0,
-  INITIAL_INFECTIONS: 2,
+  INITIAL_INFECTIONS: 0,
   SOCIAL_DISTANCING_RATE: 0.15,
   SOCIAL_DISTANCING_INTENSITY: 0.9,
   MORTALITY_RATE: 0.00015,
@@ -39,8 +39,9 @@ var CONFIG = {
   var animationRequest;
   var animationFrameCount;
   var playAnimation = true;
-
   
+    
+    
   function init(){
     myChart.data.labels = [];
     myChart.data.datasets.forEach((dataset) => {
@@ -66,8 +67,15 @@ var CONFIG = {
       createParticles();
       loop();
     }
+    document.getElementById("button").addEventListener("click", function(){
+        menu = document.getElementById("menu");
+        menu.style.display = "none";
+        canvas = document.getElementById("world");
+        canvas.style.removeProperty("filter");
+        infectParticle(particles[0]);
+    });            
   }
-  
+    
   function infectParticle(particle){
     if (particle.healthStatus == "healthy") {
       particle.healthStatus = "infected";
@@ -147,7 +155,7 @@ var CONFIG = {
               dataset.data.push(infectedCount);
               console.log(infectedCount);
               if (infectedCount == 0) {
-                playAnimation = false;
+                playAnimation = true;
               }
               break;
             case "Recovered":
@@ -203,7 +211,7 @@ var CONFIG = {
             xdist = Math.abs(bounceParticle.position.x - particle.position.x);
             ydist = Math.abs(bounceParticle.position.y - particle.position.y);
             dist = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
-            if(dist <= z) {
+            if(dist < z) {
               randomiseDirection(particle);
               randomiseDirection(bounceParticle);
               if (particle.healthStatus == "infected" || bounceParticle.healthStatus == "infected") {
@@ -265,7 +273,7 @@ var CONFIG = {
     gui.close();
     gui.add(CONFIG, 'INFECTIOUSNESS').name("Higiene").min(0).step(1).max(100).onFinishChange(init);
     gui.add(CONFIG, 'QUANTITY').name("Población").min(15).step(1).max(1000).onFinishChange(init);
-    gui.add(CONFIG, 'INITIAL_INFECTIONS').name("Infecciones Iniciales").min(1).step(1).max(15).onFinishChange(init);
+    gui.add(CONFIG, 'INITIAL_INFECTIONS').name("Infecciones Iniciales").min(0).step(1).max(15).onFinishChange(init);
     gui.add(CONFIG, 'SOCIAL_DISTANCING_RATE').name("SusanaDistancia").min(0).step(0.05).max(1).onFinishChange(init);
     gui.add(CONFIG, 'SOCIAL_DISTANCING_INTENSITY').name("Intensidad de dist. Social").min(0).step(0.05).max(1).onFinishChange(init);
     gui.add(CONFIG, 'TIME_TO_RECOVER').name("Tiempo de recuperación").min(300).step(100).max(5000).onFinishChange(init);
@@ -328,4 +336,7 @@ var CONFIG = {
   });
   
   init();
+canvas = document.getElementById("world")
+canvas.style.filter = "blur(10px)";
+    
 }());

@@ -9,51 +9,72 @@
 <body >
 <!-- partial:index.partial.html -->
 <ul id="colorLegend">
-  <li><div class = "roundish" style="background-color: #04d492">Saludables</div></li>
-  <li><div class = "roundish" style="background-color: #ff0048">Infectados</div></li>
-  <li><div class = "roundish" style="background-color: #38747B">Recuperados</div></li>
-  <li><div class = "roundish" style="background-color: #9e9e9e">Fallecidos</div></li>
+  <li><div class = "roundish" style="background-color: #04d492">Saludables
+      <div class="roundish "style="background-color:#1B1B1B;color:#04d492;align-content: center"><center id="healthy">200</center></div>
+      </div>
+  </li>
+  <li><div class = "roundish" style="background-color: #ff0048">Infectados
+      <div class="roundish "style="background-color:#1B1B1B;color:#ff0048;align-content: center"><center id="infected">200</center></div>
+      </div>
+  </li>
+  <li><div class = "roundish" style="background-color: #e6bf00">Recuperados
+      <div class="roundish "style="background-color:#1B1B1B;color:#e6bf00;align-content: center"><center id="recovered">200</center></div>
+      </div>
+  </li>
+  <li><div class = "roundish" style="background-color: #9e9e9e">Fallecidos
+      <div class="roundish "style="background-color:#1B1B1B;color:#9e9e9e;align-content: center"><center id="healthy">200</center></div>
+      </div>
+  </li>
 </ul>
 
-<div id="chartContainer">
+<div id="chartContainer" >
   <div id="capacity">&nbsp;&nbsp;&nbsp;&#128138;Capacidad hospitalaria&#128138;</div>
-  <canvas id="chart"></canvas>
+  <canvas id="chart" ></canvas>
 </div>
 
-<style type="text/css">
-.menu-container{
-  position: absolute; 
-  left: 50%;
-  top: 50%;
-}
-.blur_effect { 
-    filter: blur(5px); 
-} 
-.menu{
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 10px;
-  position: relative; left: -50%; 
-  background-color: #1B1B1B;
-  border: 5px #262626;
-  border-style: solid
-}
-.menu h1{
-  color: white;
-}
-</style>
 
-
-<div class="menu-container">
+    
+<div class="menu-container" id="menu">
   <div class="menu">
     <h1>Simulavirus</h1> 
-    tum te tum
+    Como funciona?
+
+    <div id="container">
+      <button class="learn-more">
+        <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+        </span>
+        <span class="button-text"  id="button">Infectar</span>
+      </button>
+    </div>      
+      
   </div>
 </div>
 
 <!-- partial -->
 <script  src="dat.gui.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script><script  src="./script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script><script  src="./script.js" ></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyClluSludmFmO7TC-Tb2pwsR_z1lqoZVWY",
+    authDomain: "simulavirus.firebaseapp.com",
+    databaseURL: "https://simulavirus.firebaseio.com",
+    projectId: "simulavirus",
+    storageBucket: "simulavirus.appspot.com",
+    messagingSenderId: "323084300256",
+    appId: "1:323084300256:web:929312b9739f5257248585",
+    measurementId: "G-C2BKXCY6R9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 </html>
