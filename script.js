@@ -169,10 +169,24 @@ var CONFIG = {
       myChart.update();
     }
     animationFrameCount++;
-    
-
-    var percentageInfectedParticles = (particles.filter(p => {return (p.healthStatus == "infected" || p.healthStatus == "dead")}).length / particles.length);
-    var colorRedAmount = 250 + (percentageInfectedParticles * 50);
+    //Update Tabs htab, itab, rtab, dtab
+    var PHP = (particles.filter(p => {return (p.healthStatus == "healthy")}).length / particles.length);
+    a = Math.round(PHP*100)
+    document.getElementById("htab").innerHTML = a.toString()+" %"
+      
+    var PIP = (particles.filter(p => {return (p.healthStatus == "infected")}).length / particles.length);
+    b = Math.round(PIP*100)
+    document.getElementById("itab").innerHTML = b.toString()+" %"
+      
+    var PRP = (particles.filter(p => {return (p.healthStatus == "recovered")}).length / particles.length);
+    c = Math.round(PRP*100)
+    document.getElementById("rtab").innerHTML = c.toString()+" %"
+            
+    var PDP = (particles.filter(p => {return (p.healthStatus == "dead")}).length / particles.length);
+    d = Math.round(PDP*100)
+    document.getElementById("dtab").innerHTML = d.toString()+" %"
+            
+      
     context.fillStyle = 'rgba(43, 43, 43,0.4)';
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 
