@@ -2,13 +2,15 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Simula tu virus, el distanciamiento social importa</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto&amp;display=swap'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body >
 <!-- partial:index.partial.html -->
-<ul id="colorLegend">
+<ul id="colorLegend" style="display: none">
   <li><div class = "roundish" style="background-color: #04d492">Saludables
       <div class="roundish "style="background-color:#1B1B1B;color:#04d492;align-content: center"><center id="htab"></center></div>
       </div>
@@ -27,7 +29,7 @@
   </li>
 </ul>
 
-<div id="chartContainer" >
+<div id="chartContainer" style="display: none">
   <div id="capacity">&nbsp;&nbsp;&nbsp;&#128138;Capacidad hospitalaria&#128138;</div>
   <canvas id="chart" ></canvas>
 </div>
@@ -36,9 +38,138 @@
     
 <div class="menu-container" id="menu">
   <div class="menu">
-    <h1>Simulavirus</h1> 
-    Como funciona?
+    <table>
+        <tr>
+            <th><h1 >SimulaVirus</h1></th>            
+            <th><img style="height: 50px;top:-7em;" src="img.png"></th>
+            <th><h3 style="color: #8B8B8B">&nbsp;&nbsp;v.0.2&nbsp;&nbsp;</h3></th>
+        </tr>
+        </table>
+    
+<div class="card">
+    <section class="cardHeader">
+        <span class="cardAvatarContainer">
+            <span class="cardAvatar" style="background-image: url(https://img.icons8.com/metro/26/000000/question-mark.png)"></span>
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle">Qué es Simulavirus?</div>
+            <div class="cardHeaderSupportingText">Es realista?</div>
+        </span>
+    </section>
+    <div class="scrollbar" id="style-1">
+      <div class="force-overflow" style="min-height: 400px">
+        <section class="nonSharedContent force-overflow">
+            <div class="greyLine"></div>
+            <div class="greyLine">
+                <a style="color: orange">AVISO: Este no es un intento de modelar el COVID-19, Lo que sigue es un modelo simplificado del proceso de una enfermedad. El objetivo es entender cómo evoluciona una epidemia en general.<br><br></a>
+                AVISO #2: ¡No soy un epidemiólogo! Sigo a los expertos en enfermedades infecciosas (y lo mismo deberías hacer tú). Muy probablemente haya errores en este simulador, pero los voy a corregir tan rápido como pueda. Si ves alguno, por favor <a href="https://emilio.bz" style="color: #00ffae">contáctame.</a><br><br>
+                Simulavirus es una herramienta de simulación web creada por <a href="https://emilio.bz" style="color: #00ffae">Emilio</a> Fuertemente inspirado por <a href="https://www.youtube.com/watch?v=gxAaO2rsdIs&t" style="color: #00ffae">éste</a> video por 3Blue1Brown, donde te hace entender cuales factores impactan más fuertemente el desarrollo de una pandemia, en el futuro se implementarán herramientas de análisis y características más complejas<br><br><a href="https://www.podemosaprender.org/brote/" style="color: #00ffae">Este</a> es un recurso increible para aprender mas de este tipo de simulaciones</div>
+        </section>        
+      </div>
+    </div>  
 
+</div>      
+<div class="card">
+    <section class="cardHeader">
+        <span class="cardAvatarContainer">
+            <span class="cardAvatar" style="background-image: url(https://img.icons8.com/windows/32/000000/virus.png)"></span>
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle">Qué parámetros toma el simulador?</div>
+            <div class="cardHeaderSupportingText"></div>
+        </span>
+    </section>
+    <div class="scrollbar" id="style-1">
+      <div class="force-overflow">    
+            <section class="nonSharedContent force-overflow">
+                <section class="greySquaresContainer">
+                    <table>
+                        <tr>
+                            <th>
+                                <span class="greySquare" style="background-image: url(https://img.icons8.com/ios/34/000000/wash-your-hands.png);background-color: #00ffae;"></span>                                
+                            </th>
+                            <th>
+                                <a style = "color:#00ffae">Higiene:</a> Más higiene = menos <br>probabilidad de infección                            
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="greySquare" style="background-image: url(https://img.icons8.com/wired/34/000000/crowd.png);background-color: #00ffae;"></span>                                
+                            </th>
+                            <th>
+                                <a style = "color:#00ffae">Poblacion: </a>Cantidad de agentes                           
+                            </th>                        
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="greySquare" style="background-image: url(https://img.icons8.com/wired/34/000000/fever.png);background-color: #00ffae;"></span>
+                    
+                            </th>
+                            <th>
+                                <a style = "color:#00ffae">Infecciones Iniciales: </a><br> Más higiene = menos <br>probabilidad de infección                            
+                            </th>                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="greySquare" style="background-image: url(https://img.icons8.com/wired/34/000000/tall-person.png);background-color: #00ffae;"></span>
+                            </th>
+                            <th>
+                                <a style = "color:#00ffae">Higiene:</a> Más higiene = menos probabilidad <br>de infección                            
+                            </th>    
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="greySquare" style="background-image: url(https://img.icons8.com/wired/34/000000/dead-face.png);background-color: #00ffae;"></span>
+                            </th>
+                            <th>
+                                <a style = "color:#00ffae">Higiene:</a> Más higiene = menos <br>probabilidad de infección                            
+                            </th>                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="greySquare" style="background-image: url(https://img.icons8.com/wired/34/000000/running.png);background-color: #00ffae;"></span>
+                            </th>
+                            <th>
+                                <a style = "color:#00ffae">Higiene:</a> Más higiene = menos <br>probabilidad de infección                            
+                            </th>                            
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="greySquare" style="background-image: url(https://img.icons8.com/wired/34/000000/circled.png);background-color: #00ffae;"></span>
+                            </th>
+                            <th>
+                                <a style = "color:#00ffae">Higiene:</a> Más higiene = menos <br>probabilidad de infección                            
+                            </th>                        
+                        </tr>
+                    </table>
+                </section>
+            </section>
+      </div>
+    </div>
+</div>      
+<div class="card">
+    <section class="cardHeader">
+        <span class="cardAvatarContainer">
+            <span class="cardAvatar" style="background-image: url(https://img.icons8.com/metro/32/000000/code.png)"></span>
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle">Dónde puedo ver el código?</div>
+            <div class="cardHeaderSupportingText"></div>
+        </span>
+    </section>
+    <div class="scrollbar" id="style-1">
+      <div class="force-overflow">
+        <section class="nonSharedContent force-overflow">
+            <div class="greyLine"></div>
+            <div class="greyLine">
+                <a style="color: orange"><a href="https://github.com/asim-v/ViralSim" style="color: #00ffae">Aqui.</a><br><br></a>
+                <a style="color: orange">Tambien puedes comprarme un cafe :) <a href="https://www.buymeacoffee.com/emiliobz" style="color: #00ffae">aqui</a></a>
+            </div>
+        </section>        
+      </div>
+    </div>  
+</div>          
+      
     <div id="container">
       <button class="learn-more">
         <span class="circle" aria-hidden="true">
@@ -52,7 +183,7 @@
 </div>
 
 <!-- partial -->
-<script  src="dat.gui.js"></script>
+<script  src="dat.gui.js" ></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script><script  src="./script.js" ></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
@@ -75,6 +206,17 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+    
+// Initialize
+const allCardsHeaders = document.getElementsByClassName("cardHeader");
+for(header of allCardsHeaders) {
+    header.addEventListener("click", clickCard);
+}
+
+function clickCard(e) {
+    this.parentElement.classList.toggle('cardActive');
+}    
+    
 </script>
 </body>
 </html>

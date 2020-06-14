@@ -70,9 +70,18 @@ var CONFIG = {
     document.getElementById("button").addEventListener("click", function(){
         menu = document.getElementById("menu");
         menu.style.display = "none";
+        tags = document.getElementById("colorLegend")
+        tags.style.removeProperty("display");
+        graph = document.getElementById("chartContainer")
+        graph.style.removeProperty("display");
         canvas = document.getElementById("world");
         canvas.style.removeProperty("filter");
+        gui = document.getElementById("gui");
+        gui.style.visibility = "visible"
         infectParticle(particles[0]);
+        
+        colorLegend
+        chartContainer
     });            
   }
     
