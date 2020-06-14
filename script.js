@@ -78,6 +78,8 @@ var CONFIG = {
         canvas.style.removeProperty("filter");
         gui = document.getElementById("gui");
         gui.style.visibility = "visible"
+        mob = document.getElementById("mobileCap");
+        mob.style.display = "inline";
         infectParticle(particles[0]);
         
         colorLegend
